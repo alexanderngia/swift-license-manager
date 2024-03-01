@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "start:frontend": "next dev",
-    "start:backend": "node -r ts-node/register api/server.mjs",
+    "start:backend": "node -r ts-node/register pages/api/server.mjs",
     "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
   },
   "dependencies": {

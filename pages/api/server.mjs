@@ -18,6 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 viewEngine(app);
 initWebRoutes(app);
 
-app.listen(3030, () => {
-  console.log("API listening on port 3030");
+app.listen(3000, () => {
+  console.log("API listening on port 3000");
 });

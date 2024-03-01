@@ -23,12 +23,11 @@ export default function Home() {
         `${process.env.NEXT_PUBLIC_CREATE_LICENSE_KEY}`,
         {
           method: "POST",
-          body: JSON.stringify({ domain: state.domain }),
+          body: JSON.stringify({ domain }),
         }
       );
       const data = await response.json();
       setState({ ...state, licenseKey: data.licenseKey });
-      console.log();
     }
   };
 
@@ -41,6 +40,7 @@ export default function Home() {
         value={state.domain}
         onChange={(e) => setState({ ...state, domain: e.target.value })}
       />
+      <p>{state.licenseKey}</p>
       <button
         onClick={() => {
           handleGenerateLicense(state.domain);
