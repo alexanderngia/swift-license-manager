@@ -1,46 +1,44 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "@components/header/index.module.scss";
+import Link from "next/link";
+import Img from "@components/image";
 
-import { LicenseList } from "../../types/license";
 import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Header() {
-  const navigation = {
-    title: "",
-    url: "",
-  };
+  //   const navigation = [
+  //     {
+  //       title: "Home",
+  //       url: "/",
+  //     },
+  //     {
+  //       title: "contact",
+  //       url: "/contact",
+  //     },
+  //   ];
   return (
-    <>
-
-      <main className={`${styles.main} ${inter.className}`}>
-        {data &&
+    <div className={styles["root"]}>
+      <div className={styles["logo"]}>
+        <Link href="/">
+          <Img
+            width={90}
+            height={35}
+            alt="swift logo"
+            src="/swift_logo.webp"
+          />
+        </Link>
+      </div>
+      {/* <div className={styles["menu"]}>
+        {navigation &&
           React.Children.toArray(
-            data.map(
-              ({
-                customerName,
-                customerEmail,
-                domain,
-                shopId,
-                licenseKey,
-              }: LicenseList) => {
-                return (
-                  <ul>
-                    <li>{customerName}</li>
-                    <li>{customerEmail}</li>
-                    <li>{domain}</li>
-                    <li>{shopId}</li>
-                    <li>{licenseKey}</li>
-                  </ul>
-                );
-              }
-            )
+            navigation.map(({ title, url }) => {
+              return (
+                <Link key={title} href={url}>
+                  {title}
+                </Link>
+              );
+            })
           )}
-      </main>
-    </>
+      </div> */}
+    </div>
   );
 }
-

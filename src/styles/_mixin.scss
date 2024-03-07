@@ -1,0 +1,98 @@
+@import "variables";
+
+@mixin Heading() {
+  font-family: $font;
+  color: $black-fade;
+  line-height: 1.4;
+  font-weight: 500;
+  //   @include light {
+  //     color: $light-second;
+  //   }
+}
+
+@mixin Text() {
+  font-family: $font;
+  color: $black;
+  line-height: 1.4;
+  //   @include dark {
+  //     color: $light-white;
+  //   }
+}
+
+@mixin nonBreak() {
+  width: 100%;
+  max-width: 1550px;
+}
+@mixin flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flexCol() {
+  @include flex();
+  flex-direction: column;
+}
+@mixin padding-2() {
+  padding: 2%;
+}
+@mixin padding-2-5() {
+  padding: 2% 5%;
+}
+@mixin padding-x() {
+  padding: 5%;
+}
+
+@mixin boxShadow() {
+  box-shadow: 17px 17px 86px 0px rgba($black, 0.15);
+}
+@mixin shadowColor() {
+  box-shadow: rgba(145, 158, 171, 0.08) 0px 0px 24px,
+    rgba(145, 158, 171, 0.08) 0px 12px 24px;
+}
+
+@mixin boxShadowLight() {
+  box-shadow: 0px 16px 40px rgba($black-fade, 0.2);
+}
+@mixin boxShadowBtn() {
+  box-shadow: 0px 0px 10px rgba($light-second, 0.1);
+}
+@mixin Transition3() {
+  transition: all 0.3s linear;
+}
+@mixin Transition2() {
+  transition: all 0.2s linear;
+}
+@mixin Transition() {
+  transition: all 0.1s linear;
+}
+
+@mixin scaleUpHover() {
+  @include Transition3();
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+// DARK MODE
+
+// @mixin light() {
+//   @media (prefers-color-scheme: light) {
+//     @at-root #{selector-nest(':root:not([data-theme=light]):not([data-theme=dark])', &)} {
+//       @content;
+//     }
+//   }
+//   @at-root #{selector-nest(':root[data-theme=light]', &)} {
+//     @content;
+//   }
+// }
+
+// @mixin dark() {
+//   @media (prefers-color-scheme: dark) {
+//     @at-root #{selector-nest(':root:not([data-theme=light]):not([data-theme=dark])', &)} {
+//       @content;
+//     }
+//   }
+//   @at-root #{selector-nest(':root[data-theme=dark]', &)} {
+//     @content;
+//   }
+// }

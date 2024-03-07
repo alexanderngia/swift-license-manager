@@ -1,0 +1,50 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+
+.root {
+  @include Text();
+  background-color: $light-primary;
+  font-weight: 700;
+  color: $light-white;
+  padding: 14px;
+  appearance: none;
+  cursor: pointer;
+  @include Transition();
+  margin-right: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $heavy-primary;
+  }
+  &.subBtn {
+    background-color: transparent;
+    border: 1px solid $black;
+    color: $black;
+    @include Transition3();
+    &:hover {
+      background-color: $black;
+      color: $black-fade;
+    }
+  }
+  &:disabled {
+    background-color: $black-fade;
+    color: $black;
+    cursor: auto;
+
+    &:hover {
+      border: 1px solid $black-fade;
+      background-color: $black-fade;
+    }
+  }
+  &.cancelBtn {
+    background-color: $black-fade;
+    color: $black;
+    font-weight: 700;
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+}

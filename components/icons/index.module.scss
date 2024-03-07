@@ -1,0 +1,24 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+.root {
+  cursor: pointer;
+  @include Transition3();
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.number-cart {
+  background-color: $black;
+  color: $black-fade;
+  position: absolute;
+  text-align: center;
+  border-radius: 100%;
+  right: -8px;
+  top: -8px;
+  font-size: 0.8rem;
+  font-family: $font;
+  padding: 4px 6px;
+}
+.container-cart {
+  position: relative;
+}

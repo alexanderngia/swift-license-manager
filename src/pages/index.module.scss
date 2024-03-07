@@ -1,0 +1,35 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+.root {
+  width: 100%;
+  @include padding-2-5();
+  @include flexCol();
+  justify-content: space-between;
+  row-gap: 30px;
+  .button {
+    display: flex;
+    column-gap: 10px;
+    margin-right: 0;
+  }
+  .plusIcon {
+    width: 20px;
+  }
+}
+.heading,
+.table {
+  @include flex();
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.title {
+  width: 50%;
+}
+.table {
+  @include flexCol();
+  justify-content: space-between;
+  @include boxShadow();
+  border-radius: 10px;
+  align-items: flex-start;
+}

@@ -1,0 +1,33 @@
+@font-face {
+  display: swap;
+  font-family: "Public Sans";
+  src: url("/fonts/PublicSans.ttf") format("woff2"),
+    url("/fonts/PublicSans.ttf") format("woff");
+}
+$warning: #f22613;
+
+$white: #fbfbfb;
+$light-white: #ffffff;
+// $light-primary: #6d81fe;
+$light-primary: #593bff;
+
+$heavy-primary: #404c98;
+$light-second: #23314c;
+
+// DARK MODE
+$black-fade: rgba(#121212, 0.75);
+$black: #121212;
+$black-hover: rgba(#444444, 0.5);
+
+$theme-bg: #1a1824;
+
+$body-color: #808191;
+$button-bg: #33323d;
+
+$border-color: rgb(128 129 145 / 24%);
+
+//Space
+$space: 5% 2%;
+
+//Fonts
+$font: "Public Sans", sans-serif;

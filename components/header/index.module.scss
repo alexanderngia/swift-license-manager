@@ -1,0 +1,17 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+.root {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @include padding-2;
+  @include shadowColor();
+}
+.logo {
+  a {
+    display: flex;
+  }
+}
