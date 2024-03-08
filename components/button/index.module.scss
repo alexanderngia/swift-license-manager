@@ -14,18 +14,23 @@
   margin-right: 15px;
   font-size: 1rem;
   border-radius: 10px;
-
+  display: flex;
+  column-gap: 10px;
+  svg {
+    width: 20px;
+  }
   &:hover {
     background-color: $heavy-primary;
   }
   &.subBtn {
+    display: flex;
+    align-items: center;
+    @include boxShadow();
     background-color: transparent;
-    border: 1px solid $black;
     color: $black;
     @include Transition3();
     &:hover {
-      background-color: $black;
-      color: $black-fade;
+      background-color: rgba($black-hover, 0.1);
     }
   }
   &:disabled {

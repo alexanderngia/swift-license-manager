@@ -6,6 +6,7 @@ export interface LicenseData {
 export interface LicenseList {
   [x: string]: any;
   id?: number;
+  licenseStatus: number;
   customerName: string;
   customerEmail: string;
   domain: string;

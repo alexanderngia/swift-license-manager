@@ -1,6 +1,8 @@
 import InputText from "@components/input";
 import { useEffect, useState } from "react";
 import styles from "@components/table/index.module.scss";
+import moment from "moment";
+
 import { LicenseList } from "@type/license";
 import React from "react";
 import { Search } from "@components/icons";
@@ -30,7 +32,7 @@ export default function Table({ data }: ITable) {
       <div className={styles["tool"]}>
         <Search customClass={styles["searchIcon"]} />
         <InputText
-          placeholder="Tìm sản phẩm"
+          placeholder="Tìm domain, khách hàng,..."
           defaultValue={q}
           type="text"
           onChange={(e: any) => setQ(e.target.value)}
@@ -40,10 +42,12 @@ export default function Table({ data }: ITable) {
         <thead>
           <tr>
             <th>ID</th>
+            <th>Status</th>
             <th>Client Name</th>
             <th>Shopify Domain</th>
             <th>Shop ID</th>
             <th>License Key</th>
+            <th>Created Date</th>
           </tr>
         </thead>
         <tbody>
@@ -52,22 +56,47 @@ export default function Table({ data }: ITable) {
               search(data)?.map(
                 ({
                   id,
+                  licenseStatus,
                   customerName,
                   customerEmail,
                   domain,
                   shopId,
                   licenseKey,
+                  createdAt,
                 }: LicenseList) => {
+                  const formattedDate = moment(createdAt).format(
+                    "DD/MM/YYYY HH:mm:ss"
+                  );
+
                   return (
                     <tr>
                       <td>{id}</td>
+                      <td
+                        style={{
+                          padding: `0 40px`,
+                          display: `flex`,
+                        }}
+                      >
+                        <span
+                          style={{
+                            borderRadius: `15px`,
+                            display: `block`,
+                            height: `10px`,
+                            width: `10px`,
+                            backgroundColor: `${
+                              licenseStatus === 1 ? "#1fcf00" : "#8f8f8f"
+                            }`,
+                          }}
+                        ></span>
+                      </td>
                       <td>
-                        <tr>{customerName}</tr>
-                        <tr>{customerEmail}</tr>
+                        {customerName} <br />
+                        {customerEmail}
                       </td>
                       <td>{domain}</td>
                       <td>{shopId}</td>
                       <td>{licenseKey}</td>
+                      <td>{formattedDate}</td>
                     </tr>
                   );
                 }

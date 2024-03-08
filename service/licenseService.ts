@@ -1,12 +1,25 @@
 // import axios from "axios";
+import { Form } from "@pages/create-license";
 import axios from "axios";
+import dotenv from "dotenv";
 
-require("dotenv").config();
+dotenv.config();
 
 export const getLicenseList = async () => {
   try {
     const { data } = await axios.get(`${process.env.API_GET_LICENSE_LIST}`);
     return data.licenseList;
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const createLicense = async (form: Form) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_CREATE_LICENSE}`,
+      form
+    );
+    return response.data;
   } catch (error) {
     console.log(error);
   }

@@ -8,13 +8,9 @@
   justify-content: space-between;
   row-gap: 30px;
   .button {
-    display: flex;
-    column-gap: 10px;
     margin-right: 0;
   }
-  .plusIcon {
-    width: 20px;
-  }
+
 }
 .heading,
 .table {
@@ -27,6 +23,7 @@
   width: 50%;
 }
 .table {
+  overflow-x: auto;
   @include flexCol();
   justify-content: space-between;
   @include boxShadow();

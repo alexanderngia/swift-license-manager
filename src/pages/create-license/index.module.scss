@@ -1,0 +1,80 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+.root {
+  width: 100%;
+  @include padding-2-5();
+  @include flexCol();
+  justify-content: space-between;
+  row-gap: 30px;
+  .button {
+    margin-right: 0;
+  }
+}
+.heading {
+  @include flexCol();
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  span {
+    display: flex;
+    column-gap: 10px;
+  }
+}
+.main {
+  border-radius: 10px;
+  @include boxShadow();
+  width: 100%;
+  .title,
+  .form {
+    @include padding-2p();
+    width: 100%;
+    p {
+      padding: 0;
+    }
+  }
+  .form {
+    border-bottom: 0px;
+    @include flex();
+    justify-content: flex-start;
+    column-gap: 10px;
+    .input {
+      width: 33%;
+      input {
+        width: 94%;
+        height: 40px;
+        padding: 20px 0 0 16px;
+      }
+      p {
+        color: $black-hover;
+      }
+    }
+  }
+}
+.message {
+  @include padding-2p();
+  padding: 0 20px 20px 20px;
+  width: 100%;
+  .key {
+    span {
+      font-weight: 600;
+      background-color: rgba($black-hover, 0.2);
+      border-radius: 7px;
+      padding: 6px 10px;
+    }
+  }
+  .error {
+    span {
+      color: red;
+    }
+  }
+}
+.btn-row {
+  width: 100%;
+  @include flex();
+  justify-content: flex-end;
+  column-gap: 20px;
+  .icon {
+    transform: rotate(90deg);
+  }
+}

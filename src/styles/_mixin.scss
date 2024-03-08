@@ -32,6 +32,9 @@
   @include flex();
   flex-direction: column;
 }
+@mixin padding-2p() {
+  padding: 20px;
+}
 @mixin padding-2() {
   padding: 2%;
 }
