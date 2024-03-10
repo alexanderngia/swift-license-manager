@@ -113,7 +113,8 @@ export default function CreateLicense() {
               Shop Id: <strong>{formValues.shopId}</strong>
             </p>
             <p className={styles["key"]}>
-              License Key: <span>{formValues.licenseKey}</span>
+              License Key:{" "}
+              {formValues.licenseKey && <span>{formValues.licenseKey}</span>}
             </p>
             {message && (
               <p className={styles["error"]}>
