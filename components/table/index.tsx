@@ -2,6 +2,7 @@ import InputText from "@components/input";
 import { useEffect, useState } from "react";
 import styles from "@components/table/index.module.scss";
 import moment from "moment";
+import Link from "next/link";
 
 import { LicenseList } from "@type/license";
 import React from "react";
@@ -70,7 +71,9 @@ export default function Table({ data }: ITable) {
 
                   return (
                     <tr>
-                      <td>{id}</td>
+                      <td>
+                        <Link href={`/${id}`}>{id}</Link>
+                      </td>
                       <td
                         style={{
                           padding: `0 40px`,

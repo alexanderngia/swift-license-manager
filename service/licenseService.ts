@@ -1,5 +1,6 @@
 // import axios from "axios";
 import { Form } from "@pages/create-license";
+import { LicenseList } from "@type/license";
 import axios from "axios";
 import dotenv from "dotenv";
 
@@ -27,27 +28,28 @@ export const createLicense = async (form: Form) => {
   }
 };
 
-// export const getProductPath = async () => {
-//   const data = await getProducts();
-//   if (data)
-//     return data.map(
-//       ({ urlItem, categoryItem }: Products) =>
-//         `/store/${categoryItem}/${urlItem}`
-//     );
-// };
+export const getLicensePath = async () => {
+  const data = await getLicenseList();
+  if (data) return data.map(({ id }: LicenseList) => `/${id}`);
+};
 
-// export const getProductBySlug = async (url: string) => {
-//   try {
-//     const data = await getProducts();
-//     if (data)
-//       return data.find(
-//         ({ urlItem, categoryItem }: Products) =>
-//           `/store/${categoryItem}/${urlItem}` === url
-//       );
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+export const getLicenseById = async (selectedId: number) => {
+  try {
+    const data = await getLicenseList();
+
+    if (data) return data.find(({ id }: LicenseList) => id === selectedId);
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const deleteLicense = async (licenseId: number) => {
+  if (process.env.NEXT_PUBLIC_API_DELETE_LICENSE)
+    return await axios.delete(process.env.NEXT_PUBLIC_API_DELETE_LICENSE, {
+      data: {
+        id: licenseId,
+      },
+    });
+};
 
 // export const getProductByCate = async (category: string) => {
 //   try {
