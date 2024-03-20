@@ -94,7 +94,7 @@ export default function Table({ data }: ITable) {
                         {customerEmail}
                       </td>
                       <td>{domain}</td>
-                      <td>{shopId}</td>
+                      <td>{shopId === 0 ? "" : shopId}</td>
                       <td>{licenseKey}</td>
                       <td>{formattedDate}</td>
                     </tr>
