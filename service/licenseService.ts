@@ -7,7 +7,9 @@ dotenv.config();
 
 export const getLicenseList = async () => {
   try {
-    const { data } = await axios.get(`${process.env.API_GET_LICENSE_LIST}`);
+    const { data } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_GET_LICENSE_LIST}`
+    );
     return data.licenseList;
   } catch (error) {
     console.log(error);
@@ -15,11 +17,11 @@ export const getLicenseList = async () => {
 };
 export const createLicense = async (form: Form) => {
   try {
-    const response = await axios.post(
+    const { data } = await axios.post(
       `${process.env.NEXT_PUBLIC_API_CREATE_LICENSE}`,
       form
     );
-    return response.data;
+    return data;
   } catch (error) {
     console.log(error);
   }

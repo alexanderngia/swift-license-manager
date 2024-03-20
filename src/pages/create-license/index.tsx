@@ -1,7 +1,7 @@
 import styles from "@pages/create-license/index.module.scss";
 
 import { LicenseList } from "@type/license";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import Layout from "@components/layout";
 import { ButtonMain, ButtonSub } from "@components/button";
 import router, { useRouter } from "next/router";
@@ -20,9 +20,11 @@ export interface Form {
   shopId: number | null;
   licenseKey: string;
 }
+
 export default function CreateLicense() {
   const router = useRouter();
   const [message, setMessage] = useState<string>("");
+
   const [formValues, setFormValues] = useState<Form>({
     status: 0,
     name: "",
@@ -31,8 +33,10 @@ export default function CreateLicense() {
     shopId: null,
     licenseKey: "",
   });
+
   const isFormValid = formValues.name && formValues.email && formValues.domain;
-  const submit = async (formValue: Form) => {
+
+  const Submit = async (formValue: Form) => {
     const result = await createLicense(formValue);
     if (result.newLicense) {
       setFormValues({
@@ -137,7 +141,7 @@ export default function CreateLicense() {
             type="submit"
             classname={styles["button"]}
             onClick={() => {
-              submit(formValues);
+              Submit(formValues);
             }}
             disabled={!isFormValid}
           >

@@ -8,10 +8,17 @@ import { ButtonMain } from "@components/button";
 import Table from "@components/table";
 import { useRouter } from "next/router";
 import { Plus } from "@components/icons";
+import useSWR from "swr";
 
-export default function Home({ data }: LicenseList) {
+export default function Home() {
   const router = useRouter();
 
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_GET_LICENSE_LIST}`,
+    getLicenseList
+  );
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
   return (
     <Layout title="Swift License Manager">
       <div className={styles["root"]}>
@@ -37,12 +44,12 @@ export default function Home({ data }: LicenseList) {
     </Layout>
   );
 }
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await getLicenseList();
-  return {
-    props: {
-      data,
-    },
-    revalidate: 1,
-  };
-};
+// export const getStaticProps: GetStaticProps = async () => {
+//   const data = await getLicenseList();
+//   return {
+//     props: {
+//       data,
+//     },
+//     revalidate: 1,
+//   };
+// };
