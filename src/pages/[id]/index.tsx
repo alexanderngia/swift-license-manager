@@ -12,7 +12,7 @@ import { LicenseList } from "@type/license";
 import Layout from "@components/layout";
 import InputText from "@components/input";
 import { ButtonMain, ButtonSub } from "@components/button";
-import { ChevronDown, Plus } from "@components/icons";
+import { ChevronDown, Minus, Plus } from "@components/icons";
 import classNames from "classnames";
 import Link from "next/link";
 

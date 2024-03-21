@@ -76,3 +76,33 @@ export const ChevronDown: React.FC<IconsProps> = ({ onClick, customClass }) => {
     </svg>
   );
 };
+
+export const Close: React.FC<IconsProps> = ({ onClick, customClass }) => {
+  return (
+    <svg
+      className={classnames(styles["root"], customClass)}
+      onClick={onClick}
+      viewBox="0 0 20 21"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.59236 0.450195L0 4.04255L1.8344 5.87695L6.36943 10.4884L1.8344 15.0234L0 16.7814L3.59236 20.4502L5.42675 18.6158L10.0382 14.0043L14.5732 18.6158L16.3312 20.4502L20 16.7814L18.1656 15.0234L13.5541 10.4884L18.1656 5.87695L20 4.04255L16.3312 0.450195L14.5732 2.28459L10.0382 6.81962L5.42675 2.28459L3.59236 0.450195Z"
+        fill="black"
+      />
+    </svg>
+  );
+};
+export const Minus: React.FC<IconsProps> = ({ onClick, customClass }) => {
+  return (
+    <svg
+      className={classnames(styles["root"], customClass)}
+      onClick={onClick}
+      viewBox="0 0 7 4"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 0V1.75H7V0H0Z" />
+    </svg>
+  );
+};

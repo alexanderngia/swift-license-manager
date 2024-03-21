@@ -35,7 +35,6 @@ export default function Home() {
             }}
           >
             <Plus customClass={styles["plusIcon"]} />
-            Create License
           </ButtonMain>
         </div>
         <div className={styles["table"]}>

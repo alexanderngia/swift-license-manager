@@ -4,8 +4,8 @@ import { LicenseList } from "@type/license";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import Layout from "@components/layout";
 import { ButtonMain, ButtonSub } from "@components/button";
-import router, { useRouter } from "next/router";
-import { ArrowRight, ChevronDown, Plus } from "@components/icons";
+import { useRouter } from "next/router";
+import { ChevronDown, Plus } from "@components/icons";
 import InputText from "@components/input";
 import { createLicense } from "@service/licenseService";
 import dotenv from "dotenv";
@@ -53,12 +53,23 @@ export default function CreateLicense() {
     <Layout title="Create License Key">
       <div className={styles["root"]}>
         <div className={styles["heading"]}>
-          <h1>Create License</h1>
-          <span>
-            <Link href="/">License Management</Link>
-            <p>&#9679;</p>
-            <p>Create License</p>
+          <span className={styles["title"]}>
+            <h1>Create License</h1>
+            <span>
+              <Link href="/">License Management</Link>
+              <p>&#9679;</p>
+              <p>Create License</p>
+            </span>
           </span>
+          <ButtonMain
+            classname={styles["button"]}
+            onClick={() => {
+              router.push("/create-license");
+            }}
+            disabled
+          >
+            Download Theme
+          </ButtonMain>
         </div>
         <div className={styles["main"]}>
           <div className={styles["title"]}>

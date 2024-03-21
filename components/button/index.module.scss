@@ -20,7 +20,7 @@
     width: 20px;
   }
   &:hover {
-    background-color: $heavy-primary;
+    opacity: 0.9;
   }
   &.subBtn {
     display: flex;
@@ -34,14 +34,9 @@
     }
   }
   &:disabled {
-    background-color: $black-fade;
-    color: $black;
+    background-color: rgba($black-fade, 0.5);
+    color: rgba($white, 0.5);
     cursor: auto;
-
-    &:hover {
-      border: 1px solid $black-fade;
-      background-color: $black-fade;
-    }
   }
   &.cancelBtn {
     background-color: $black-fade;

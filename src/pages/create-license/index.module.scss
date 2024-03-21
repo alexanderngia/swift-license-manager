@@ -12,15 +12,21 @@
   }
 }
 .heading {
-  @include flexCol();
+  @include flex();
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  span {
-    display: flex;
-    align-items: center;
 
-    column-gap: 10px;
+  .title {
+    @include flexCol();
+    justify-content: space-between;
+    align-items: flex-start;
+    span {
+      display: flex;
+      align-items: center;
+
+      column-gap: 10px;
+    }
   }
 }
 .main {
