@@ -46,7 +46,7 @@
 }
 
 @mixin boxShadow() {
-  box-shadow: 17px 17px 86px 0px rgba($black, 0.15);
+  box-shadow: 17px 17px 86px 0px rgba($black, 0.25);
 }
 @mixin shadowColor() {
   box-shadow: rgba(145, 158, 171, 0.08) 0px 0px 24px,
