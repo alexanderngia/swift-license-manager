@@ -14,6 +14,7 @@ import InputText from "@components/input";
 import { ButtonMain, ButtonSub } from "@components/button";
 import { ChevronDown, Plus } from "@components/icons";
 import classNames from "classnames";
+import Link from "next/link";
 
 interface SingleLicenseProps {
   licenseInfo: LicenseList;
@@ -70,7 +71,7 @@ const SingleLicense: NextPage<SingleLicenseProps> = ({ licenseInfo }) => {
         <div className={styles["heading"]}>
           <h1>License Information</h1>
           <span>
-            <p>License Management</p>
+            <Link href="/">License Management</Link>
             <p>&#9679;</p>
             <p>License Information</p>
           </span>
@@ -152,7 +153,6 @@ const SingleLicense: NextPage<SingleLicenseProps> = ({ licenseInfo }) => {
               Submit(licenseInfo.id);
             }}
           >
-            <Plus />
             Delete
           </ButtonMain>
         </div>

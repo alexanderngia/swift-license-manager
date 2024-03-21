@@ -9,6 +9,7 @@ import Table from "@components/table";
 import { useRouter } from "next/router";
 import { Plus } from "@components/icons";
 import useSWR from "swr";
+import Loading from "@components/loading";
 
 export default function Home() {
   const router = useRouter();
@@ -18,7 +19,7 @@ export default function Home() {
     getLicenseList
   );
   if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <Loading />;
   return (
     <Layout title="Swift License Manager">
       <div className={styles["root"]}>

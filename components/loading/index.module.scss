@@ -1,0 +1,57 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+
+$--hue: 200;
+$--fg: hsl($--hue, 90%, 5%);
+$--trans-dur: 0.3s;
+
+.root {
+  height: 100vh;
+  width: 100vw;
+  @include flex();
+}
+.ip {
+  width: 12rem;
+  height: 6rem;
+}
+.ip__track {
+  stroke: hsl($--hue, 90%, 90%);
+  transition: stroke $--trans-dur;
+}
+.ip__worm1,
+.ip__worm2 {
+  animation: worm1 2s linear infinite;
+}
+.ip__worm2 {
+  animation-name: worm2;
+}
+
+/* Animation */
+@keyframes worm1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    animation-timing-function: steps(1);
+    stroke-dashoffset: -358;
+  }
+  50.01% {
+    animation-timing-function: linear;
+    stroke-dashoffset: 358;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes worm2 {
+  from {
+    stroke-dashoffset: 358;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -358;
+  }
+}

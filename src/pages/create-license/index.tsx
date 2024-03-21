@@ -9,6 +9,7 @@ import { ArrowRight, ChevronDown, Plus } from "@components/icons";
 import InputText from "@components/input";
 import { createLicense } from "@service/licenseService";
 import dotenv from "dotenv";
+import Link from "next/link";
 
 dotenv.config();
 
@@ -54,7 +55,7 @@ export default function CreateLicense() {
         <div className={styles["heading"]}>
           <h1>Create License</h1>
           <span>
-            <p>License Management</p>
+            <Link href="/">License Management</Link>
             <p>&#9679;</p>
             <p>Create License</p>
           </span>
