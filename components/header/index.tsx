@@ -5,29 +5,20 @@ import Img from "@components/image";
 import React from "react";
 
 export default function Header() {
-  //   const navigation = [
-  //     {
-  //       title: "Home",
-  //       url: "/",
-  //     },
-  //     {
-  //       title: "contact",
-  //       url: "/contact",
-  //     },
-  //   ];
+  const navigation = [
+    {
+      title: "MODULE MANAGEMENT",
+      url: "/theme-module",
+    },
+  ];
   return (
     <div className={styles["root"]}>
       <div className={styles["logo"]}>
         <Link href="/">
-          <Img
-            width={90}
-            height={35}
-            alt="swift logo"
-            src="/swift_logo.webp"
-          />
+          <Img width={90} height={35} alt="swift logo" src="/swift_logo.webp" />
         </Link>
       </div>
-      {/* <div className={styles["menu"]}>
+      <div className={styles["menu"]}>
         {navigation &&
           React.Children.toArray(
             navigation.map(({ title, url }) => {
@@ -38,7 +29,7 @@ export default function Header() {
               );
             })
           )}
-      </div> */}
+      </div>
     </div>
   );
 }

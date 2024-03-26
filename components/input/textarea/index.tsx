@@ -1,37 +1,34 @@
 import { ChangeEventHandler } from "react";
 import styles from "./index.module.scss";
 import classnames from "classnames";
-export interface InputTextProps {
+export interface InputTextareProps {
   placeholder?: string;
   classname?: string;
-  type: string;
   title?: string;
   onChange?: ChangeEventHandler;
   required?: boolean;
   defaultValue?: string;
+  customTitle?: string;
 }
 
-const InputText: React.FC<InputTextProps> = ({
+const InputTextare: React.FC<InputTextareProps> = ({
   placeholder,
   classname,
   onChange,
-  type,
   title,
-  defaultValue,
+  customTitle,
   ...props
 }) => {
   return (
     <div className={classnames(styles["root"], classname)}>
-      <input
+      <textarea
         onChange={onChange}
         placeholder={placeholder}
         className={classnames(styles["input"])}
-        defaultValue={defaultValue}
-        type={type}
         {...props}
       />
-      <p className={styles["title"]}>{title}</p>
+      <p className={classnames(styles["title"], customTitle)}>{title}</p>
     </div>
   );
 };
-export default InputText;
+export default InputTextare;

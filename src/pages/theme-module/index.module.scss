@@ -1,0 +1,84 @@
+@import "/src/styles/mixin";
+@import "/src/styles/variables";
+@import "/src/styles/responsive";
+.root {
+  width: 100%;
+  padding: 2% 10%;
+  @include flexCol();
+  justify-content: space-between;
+  row-gap: 30px;
+  .button {
+    margin-right: 0;
+  }
+}
+.heading {
+  @include flex();
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  .title {
+    @include flexCol();
+    justify-content: space-between;
+    align-items: flex-start;
+    span {
+      display: flex;
+      align-items: center;
+
+      column-gap: 10px;
+    }
+  }
+}
+.main {
+  border-radius: 10px;
+  @include boxShadow();
+  width: 100%;
+  .title,
+  .form {
+    padding: 2% 2% 0 2%;
+    width: 100%;
+    p {
+      padding: 0;
+    }
+  }
+  .form {
+    border-bottom: 0px;
+    @include flex();
+    justify-content: flex-start;
+    column-gap: 10px;
+
+    .input {
+      width: 100%;
+      textarea {
+        height: 40vh;
+      }
+      p {
+        color: $black-hover;
+      }
+    }
+  }
+}
+.message {
+  @include padding-2p();
+  padding: 0 20px 20px 20px;
+  width: 100%;
+  .success {
+    span {
+      color: green;
+    }
+  }
+  .error {
+    span {
+      color: red;
+    }
+  }
+}
+.btn-row {
+  width: 100%;
+  @include flex();
+  justify-content: flex-end;
+  column-gap: 20px;
+  .icon {
+    transform: rotate(90deg);
+  }
+}
